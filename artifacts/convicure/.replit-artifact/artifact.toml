@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "ConViCure"
+version = "1.0.0"
+id = "artifacts/convicure"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 21509
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/convicure run dev"
+
+[services.env]
+PORT = "21509"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/convicure", "run", "build"]
+publicDir = "artifacts/convicure/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

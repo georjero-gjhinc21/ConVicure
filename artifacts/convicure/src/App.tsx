@@ -749,6 +749,7 @@ function Team() {
     },
     {
       photo: "/team/mohammed-inayathullah.jpg",
+      photoPosition: "center center",
       initials: "MI",
       name: "Mohammed Inayathullah, PhD",
       title: "Chief Scientist",

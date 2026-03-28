@@ -94,17 +94,20 @@ function Problem() {
         <div className="problem-grid">
           <div className="problem-card">
             <div className="problem-icon">🦠</div>
-            <h3>Borrelia burgdorferi</h3>
+            <h3>Lyme Disease (Borreliosis)</h3>
+            <span className="pathogen-species">Borrelia burgdorferi s.l.</span>
             <p>The spirochete bacterium that causes Lyme disease. Standard antibiotics kill active bacteria but fail against semi-dormant <strong>"persister"</strong> forms that evade treatment and drive chronic symptoms.</p>
           </div>
           <div className="problem-card">
             <div className="problem-icon">🧬</div>
-            <h3>Bartonella</h3>
+            <h3>Bartonellosis</h3>
+            <span className="pathogen-species">Bartonella henselae &amp; related species</span>
             <p>An intracellular bacterium found in 30–50% of Lyme patients as a coinfection. Causes neuropsychiatric and vascular symptoms. Requires extended, targeted antibiotic combinations that standard Lyme protocols ignore.</p>
           </div>
           <div className="problem-card">
             <div className="problem-icon">🩸</div>
-            <h3>Babesia</h3>
+            <h3>Babesiosis</h3>
+            <span className="pathogen-species">Babesia microti, B. duncani &amp; related species</span>
             <p>A malaria-like parasite that infects red blood cells. Standard Lyme antibiotics have zero effect. Requires antiparasitic therapy — yet is frequently overlooked, misdiagnosed, or dismissed entirely.</p>
           </div>
         </div>
@@ -129,7 +132,7 @@ function Approach() {
           <div className="drug-card">
             <div className="drug-number">1</div>
             <h3>CvC-1</h3>
-            <p className="drug-target">Targets: Borrelia burgdorferi (active + persister forms)</p>
+            <p className="drug-target">Targets: Borrelia burgdorferi s.l. (active + persister forms)</p>
             <p>The lead compound — identified through high-throughput screening of nearly 8,000 compounds by our founding scientist's research team. Uniquely kills both actively replicating spiral forms <em>and</em> semi-dormant round-body persister forms of Borrelia. FDA-approved compound being reformulated as a novel oral liposomal delivery system.</p>
           </div>
           <div className="drug-card">
@@ -147,7 +150,7 @@ function Approach() {
           <div className="drug-card">
             <div className="drug-number">4</div>
             <h3>CvC-4</h3>
-            <p className="drug-target">Targets: Babesia, inflammation</p>
+            <p className="drug-target">Targets: Babesia spp., inflammation</p>
             <p>Natural compound with potent antiparasitic activity against Babesia species and demonstrated anti-inflammatory and neuroprotective properties. Addresses the parasitic coinfection component that antibiotics cannot reach.</p>
           </div>
         </div>

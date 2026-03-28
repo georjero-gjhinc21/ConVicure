@@ -727,6 +727,7 @@ function Team() {
   const members = [
     {
       photo: "/team/jayakumar-rajadas.png",
+      photoPosition: "center center",
       initials: "JR",
       name: "Jayakumar Rajadas, PhD",
       title: "Founder & Chief Scientist",
@@ -774,6 +775,7 @@ function Team() {
                   src={m.photo}
                   alt={m.name}
                   className="team-photo"
+                  style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display = "none";
                     const fallback = e.currentTarget.nextElementSibling as HTMLElement | null;

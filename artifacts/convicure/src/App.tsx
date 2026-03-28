@@ -26,7 +26,7 @@ function Navbar() {
           <span></span><span></span><span></span>
         </button>
         <div className={`nav-links${menuOpen ? " open" : ""}`}>
-          {[["#problem", "The Problem"], ["#approach", "Our Approach"], ["#pipeline", "Pipeline"], ["#science", "Science"], ["#tbi", "TBI Program"], ["#team", "Leadership"]].map(([href, label]) => (
+          {[["#problem", "The Problem"], ["#approach", "Our Approach"], ["#pipeline", "Pipeline"], ["#science", "Science"], ["#team", "Leadership"]].map(([href, label]) => (
             <a key={href} href={href} onClick={(e) => { e.preventDefault(); scrollTo(href); }}>{label}</a>
           ))}
           <a href="#contact" className="nav-cta" onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}>Contact Us</a>
@@ -686,40 +686,6 @@ function ChatWidget() {
   );
 }
 
-function TBI() {
-  const ref = useRef<HTMLElement>(null);
-  useIntersection(ref);
-  return (
-    <section id="tbi" ref={ref}>
-      <div className="container">
-        <p className="section-label">Secondary Program</p>
-        <h2>Traumatic Brain Injury Research</h2>
-        <div className="tbi-content">
-          <div className="tbi-text">
-            <p>Building on the neuroprotective and anti-inflammatory properties observed in our combination therapy platform, ConViCure is exploring therapeutic applications for traumatic brain injury (TBI).</p>
-            <p>TBI affects an estimated 2.8 million Americans annually, with particular relevance to military service members exposed to blast overpressure and combat-related injuries. The earlier brain injury can be addressed, the better the expected patient outcome — yet objective diagnosis and acute treatment remain the two greatest unmet gaps.</p>
-            <p>Several components of ConViCure's combination platform have demonstrated relevant mechanisms: anti-inflammatory activity that may reduce secondary injury cascade, neuroprotective properties that could stabilize acute injury, and biofilm-disrupting activity relevant to infection prevention in complex traumatic wounds.</p>
-            <p>This program is in early-stage research and represents pipeline optionality for ConViCure's drug repurposing platform.</p>
-          </div>
-          <div className="tbi-facts">
-            <div className="tbi-fact">
-              <span className="tbi-num">2.8M</span>
-              <span>Americans affected by TBI annually</span>
-            </div>
-            <div className="tbi-fact">
-              <span className="tbi-num">DOD</span>
-              <span>Alignment with military research priorities</span>
-            </div>
-            <div className="tbi-fact">
-              <span className="tbi-num">Platform</span>
-              <span>Leverages existing combination therapy research</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Team() {
   const ref = useRef<HTMLElement>(null);
@@ -904,7 +870,6 @@ export default function App() {
       <Press />
       <ResearchStats />
       <Timeline />
-      <TBI />
       <LymeResources />
       <Team />
       <InvestorThesis />

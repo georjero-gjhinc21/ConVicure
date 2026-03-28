@@ -357,20 +357,36 @@ h2 {
 
 /* TEAM */
 #team { padding: 100px 0; background: var(--cloud); }
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
 .team-card {
-  background: var(--white); border-radius: 12px; padding: 36px 28px; border: 1px solid var(--border);
-  text-align: center; transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--white); border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border); transition: transform 0.25s, box-shadow 0.25s;
+  display: flex; flex-direction: column;
 }
-.team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.team-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
+.team-photo-wrap {
+  width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d4060 100%);
+  position: relative;
+}
+.team-photo {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  display: block; transition: transform 0.4s ease;
+}
+.team-card:hover .team-photo { transform: scale(1.04); }
 .team-avatar {
-  width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 20px;
+  width: 80px; height: 80px; border-radius: 50%; margin: 0 auto;
   background: linear-gradient(135deg, var(--navy), var(--teal));
   display: flex; align-items: center; justify-content: center;
-  color: var(--white); font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700;
+  color: var(--white); font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700;
 }
-.team-card h3 { font-family: var(--font-heading); font-size: 1.15rem; color: var(--navy); margin-bottom: 4px; }
-.team-title { color: var(--teal); font-weight: 600; font-size: 0.9rem; margin-bottom: 16px; }
+.team-avatar-fallback {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  border-radius: 0; margin: 0;
+}
+.team-card-body { padding: 24px 24px 28px; flex: 1; }
+.team-card h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--navy); margin-bottom: 4px; }
+.team-title { color: var(--teal); font-weight: 600; font-size: 0.88rem; margin-bottom: 14px; display: block; }
 .team-card p { color: var(--text-light); font-size: 0.88rem; line-height: 1.65; }
 .team-affiliation { color: var(--navy) !important; font-weight: 600; font-size: 0.8rem !important; margin-top: 12px; }
 

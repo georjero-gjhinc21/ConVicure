@@ -722,11 +722,41 @@ function Team() {
   const ref = useRef<HTMLElement>(null);
   useIntersection(ref);
   const members = [
-    { initials: "JR", name: "Jayakumar Rajadas, PhD", title: "Founder & Chief Scientist", bio: "Dr. Jayakumar Rajadas, PhD, brings over 30 years of research leadership in drug delivery, biomaterials, and infectious disease therapeutics. He has authored 238+ peer-reviewed publications (14,600+ citations), developed 82+ patents, and co-founded five biotechnology companies. His research program screened over 7,450 compounds to identify novel therapeutic candidates for persistent tick-borne infections — work featured in major media outlets and adopted by clinicians worldwide. He is a recognized leader in the Lyme disease research community, a Bay Area Lyme Foundation-funded scientist, and an invited speaker at international conferences including ILADS. His discoveries have independently catalyzed clinical trials at major academic medical centers.", affiliation: "" },
-    { initials: "GV", name: "George Vincent", title: "CEO", bio: "Brings operational leadership, financial management, and fundraising expertise to professionalize ConViCure's business infrastructure and lead the company's capital raise and investor readiness efforts.", affiliation: "" },
-    { initials: "CS", name: "Catherine Shachaf, PhD", title: "Chief Operating Officer", bio: "Experienced operational leader in life sciences with expertise in coordinating cross-functional scientific and business teams. Drives strategic partnerships, opportunity sourcing, and operational execution across ConViCure's programs.", affiliation: "" },
-    { initials: "MI", name: "Mohammed Inayathullah, PhD", title: "Chief Scientist", bio: "Co-author on the pivotal study published in Scientific Reports. Deep expertise in drug delivery systems, biomaterials, and preclinical development. Provides scientific leadership alongside Dr. Rajadas on formulation and efficacy studies.", affiliation: "" },
-    { initials: "AS", name: "Adrian Salmeron", title: "Vice President", bio: "Supports ConViCure's operational growth and strategic initiatives. Contributes to business development, stakeholder engagement, and the coordination of cross-functional efforts as the company advances toward clinical development.", affiliation: "" },
+    {
+      photo: "/team/jayakumar-rajadas.png",
+      initials: "JR",
+      name: "Jayakumar Rajadas, PhD",
+      title: "Founder & Chief Scientist",
+      bio: "Dr. Jayakumar Rajadas, PhD, brings over 30 years of research leadership in drug delivery, biomaterials, and infectious disease therapeutics. He has authored 238+ peer-reviewed publications (14,600+ citations), developed 82+ patents, and co-founded five biotechnology companies. His research program screened over 7,450 compounds to identify novel therapeutic candidates for persistent tick-borne infections — work featured in major media outlets and adopted by clinicians worldwide.",
+    },
+    {
+      photo: "/team/george-vincent.png",
+      initials: "GV",
+      name: "George Vincent",
+      title: "CEO",
+      bio: "Brings operational leadership, financial management, and fundraising expertise to professionalize ConViCure's business infrastructure and lead the company's capital raise and investor readiness efforts.",
+    },
+    {
+      photo: "/team/catherine-shachaf.jpg",
+      initials: "CS",
+      name: "Catherine Shachaf, PhD",
+      title: "Chief Operating Officer",
+      bio: "Experienced operational leader in life sciences with expertise in coordinating cross-functional scientific and business teams. Drives strategic partnerships, opportunity sourcing, and operational execution across ConViCure's programs.",
+    },
+    {
+      photo: "/team/mohammed-inayathullah.jpg",
+      initials: "MI",
+      name: "Mohammed Inayathullah, PhD",
+      title: "Chief Scientist",
+      bio: "Co-author on the pivotal study published in Scientific Reports. Deep expertise in drug delivery systems, biomaterials, and preclinical development. Provides scientific leadership alongside Dr. Rajadas on formulation and efficacy studies.",
+    },
+    {
+      photo: "/team/adrian-salmeron.jpg",
+      initials: "AS",
+      name: "Adrian Salmeron",
+      title: "Vice President",
+      bio: "Supports ConViCure's operational growth and strategic initiatives. Contributes to business development, stakeholder engagement, and the coordination of cross-functional efforts as the company advances toward clinical development.",
+    },
   ];
   return (
     <section id="team" ref={ref}>
@@ -736,11 +766,24 @@ function Team() {
         <div className="team-grid">
           {members.map((m) => (
             <div className="team-card" key={m.name}>
-              <div className="team-avatar">{m.initials}</div>
-              <h3>{m.name}</h3>
-              <p className="team-title">{m.title}</p>
-              <p>{m.bio}</p>
-              {m.affiliation && <p className="team-affiliation">{m.affiliation}</p>}
+              <div className="team-photo-wrap">
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  className="team-photo"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                    const fallback = e.currentTarget.nextElementSibling as HTMLElement | null;
+                    if (fallback) fallback.style.display = "flex";
+                  }}
+                />
+                <div className="team-avatar team-avatar-fallback" style={{ display: "none" }}>{m.initials}</div>
+              </div>
+              <div className="team-card-body">
+                <h3>{m.name}</h3>
+                <p className="team-title">{m.title}</p>
+                <p>{m.bio}</p>
+              </div>
             </div>
           ))}
         </div>

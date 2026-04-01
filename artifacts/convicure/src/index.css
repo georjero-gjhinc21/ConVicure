@@ -434,7 +434,7 @@ h2 {
 /* Photo area — full-bleed gradient portrait */
 .team-photo-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, var(--navy) 0%, #1a4a6e 50%, #0a3d5c 100%);

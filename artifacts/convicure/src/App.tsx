@@ -708,6 +708,7 @@ function Team() {
     },
     {
       photo: "/team/catherine-shachaf.jpg",
+      photoPosition: "center center",
       initials: "CS",
       name: "Catherine Shachaf, PhD",
       title: "Chief Operating Officer",

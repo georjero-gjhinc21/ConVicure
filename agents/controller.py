@@ -9,6 +9,7 @@ import glob
 from typing import List, Dict, Optional
 from agents.base_agent import BaseAgent
 from agents.crm import CRMManager
+from agents.resend_emailer import ResendEmailer
 
 
 class ReviewController(BaseAgent):
@@ -19,6 +20,14 @@ class ReviewController(BaseAgent):
         self.crm = CRMManager(config_path)
         self.drafts_dir = self.config.get("paths", {}).get("drafts_dir", "data/drafts/")
         self.sent_dir = self.config.get("paths", {}).get("sent_dir", "data/sent/")
+        
+        # Initialize Resend emailer
+        try:
+            self.emailer = ResendEmailer()
+            self.logger.info("Resend emailer initialized successfully")
+        except ValueError as e:
+            self.logger.error(f"Failed to initialize Resend emailer: {e}")
+            self.emailer = None
         
     def get_pending_drafts(self) -> List[Dict]:
         """Get all drafts pending review"""
@@ -225,22 +234,37 @@ class ReviewController(BaseAgent):
         
     def _send_email(self, draft: Dict) -> bool:
         """
-        Send email via Gmail API
+        Send email via Resend API
         
-        NOTE: This is a placeholder. In production, implement Gmail API integration.
-        For now, just logs the email that would be sent.
+        Args:
+            draft: Email draft dictionary
+            
+        Returns:
+            True if sent successfully, False otherwise
         """
-        self.logger.info(f"[EMAIL SEND] To: {draft.get('to_email')}")
-        self.logger.info(f"[EMAIL SEND] Subject: {draft.get('subject')}")
-        self.logger.info(f"[EMAIL SEND] Body:\n{draft.get('body')}")
+        if not self.emailer:
+            self.logger.error("Resend emailer not initialized - check RESEND_API_KEY")
+            return False
+            
+        from_email = self.config.get("email", {}).get("from_address", "info@convicure.com")
+        from_name = self.config.get("email", {}).get("from_name", "George Vincent")
         
-        # In production, use Gmail API:
-        # from google.oauth2.credentials import Credentials
-        # from googleapiclient.discovery import build
-        # ... Gmail API implementation ...
+        # Send via Resend
+        result = self.emailer.send_email(
+            to_email=draft.get("to_email"),
+            subject=draft.get("subject"),
+            body=draft.get("body"),
+            from_email=from_email,
+            from_name=from_name
+        )
         
-        # For now, return True to simulate successful send
-        return True
+        if result["success"]:
+            self.logger.info(f"Email sent to {draft.get('to_email')} - ID: {result['message_id']}")
+            draft["message_id"] = result["message_id"]
+            return True
+        else:
+            self.logger.error(f"Email send failed: {result['error']}")
+            return False
 
 
 if __name__ == "__main__":

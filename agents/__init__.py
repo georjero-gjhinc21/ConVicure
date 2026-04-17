@@ -9,6 +9,7 @@ from agents.intelligence import IntelligenceAgent
 from agents.personalizer import PersonalizationEngine
 from agents.crm import CRMManager
 from agents.controller import ReviewController
+from agents.resend_emailer import ResendEmailer
 
 __all__ = [
     "BaseAgent",
@@ -17,4 +18,5 @@ __all__ = [
     "PersonalizationEngine",
     "CRMManager",
     "ReviewController",
+    "ResendEmailer",
 ]

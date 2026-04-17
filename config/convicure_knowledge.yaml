@@ -1,0 +1,221 @@
+# ConViCure Knowledge Base
+# This file contains company-specific information used by agents for personalization
+
+company:
+  name: "ConViCure, Inc."
+  tagline: "First-in-class combination therapy for persistent tick-borne illness"
+  stage: "Preclinical"
+  
+  # Fundraising specifics
+  fundraise:
+    target: "$6.5M"
+    purpose: "IND clearance"
+    valuation_current: "$4-6M"
+    valuation_post_ind: "$30-50M"
+    
+  # Scientific differentiation
+  science:
+    approach: "Four-drug combination therapy targeting Borrelia, Bartonella, and Babesia"
+    key_drug: "Azlocillin (eliminates drug-resistant persister forms)"
+    pathway: "505(b)(2) - leverages existing FDA safety data"
+    founder_credentials: "Dr. Jayakumar Rajadas - Stanford, 238+ publications, 14,600+ citations"
+    breakthrough: "First treatment targeting all three tick-borne coinfection pathogens simultaneously"
+    
+  # Market opportunity
+  market:
+    disease: "Lyme disease + coinfections"
+    prevalence: "476,000 Americans diagnosed annually"
+    unmet_need: "20% suffer persistent symptoms post-treatment"
+    patient_population: "~100,000 Americans with persistent Lyme disease"
+    current_treatments: "Zero FDA-approved therapies for persistent Lyme"
+    
+  # Competitive advantages
+  advantages:
+    - "Drug repurposing reduces development risk and timeline"
+    - "Combination therapy addresses treatment-resistant persister bacteria"
+    - "505(b)(2) pathway accelerates regulatory approval"
+    - "Stanford-validated science with published peer-reviewed research"
+    - "Addresses coinfections, not just Lyme disease alone"
+    - "Prior funding from Bay Area Lyme Foundation validates scientific merit"
+    
+  # Use of funds (high-level)
+  use_of_funds:
+    preclinical_clinical: "35-40%"
+    gmp_manufacturing: "20-25%"
+    regulatory: "15-20%"
+    operations: "10-15%"
+    
+  # Team highlights (public-facing only)
+  team:
+    - name: "Dr. Jayakumar Rajadas"
+      role: "Founder & Chief Scientist"
+      credentials: "Stanford-affiliated, 238+ publications, 82+ patents, 14,600+ citations"
+    - name: "Dr. Catherine Shachaf"
+      role: "COO"
+      credentials: "Strategic operations and scientific leadership"
+    - name: "George Vincent"
+      role: "CEO"
+      credentials: "Technology consulting, government contracting, operational leadership"
+      
+  # Key milestones
+  milestones:
+    completed:
+      - "Azlocillin efficacy demonstrated in preclinical studies"
+      - "Four-drug combination formulation identified"
+      - "Bay Area Lyme Foundation grant funding secured"
+    upcoming:
+      - "Pre-IND meeting with FDA (2026)"
+      - "IRB application (mid-2026)"
+      - "Human clinical trial initiation (H2 2026)"
+      - "IND submission (end 2026/early 2027)"
+      
+  # Regulatory strategy
+  regulatory:
+    primary_pathway: "505(b)(2) New Drug Application"
+    alternative: "LPAD (Limited Population Pathway for Antibacterial Drugs)"
+    advantage: "Reference existing FDA safety data for azlocillin and other components"
+    timeline: "18-24 months to IND clearance"
+    
+  # Strategic relationships (public)
+  relationships:
+    - "Bay Area Lyme Foundation (prior grant funding)"
+    - "Stanford University (founder affiliation)"
+    - "SheppardMullin (legal counsel)"
+    
+# Investor Targeting Criteria
+investor_criteria:
+  focus_areas:
+    - "Life science venture capital"
+    - "Infectious disease therapeutics"
+    - "Drug repurposing strategies"
+    - "Preclinical/early-stage biotech"
+    - "Rare/orphan disease"
+    - "Stanford-affiliated funds"
+    
+  check_sizes:
+    min: "$500K"
+    ideal: "$1M-$3M"
+    max: "$5M"
+    
+  stage_fit:
+    - "Seed/Pre-Series A"
+    - "Series A for preclinical biotech"
+    - "Impact/mission-driven funds"
+    
+  geographic_preference:
+    - "San Francisco Bay Area"
+    - "Boston/Cambridge"
+    - "San Diego"
+    - "New York"
+    - "US-based or US-investing international funds"
+    
+  portfolio_signals:
+    positive:
+      - "Infectious disease investments"
+      - "Drug repurposing portfolio companies"
+      - "Combination therapy plays"
+      - "Stanford-affiliated companies"
+      - "Orphan/rare disease focus"
+      - "Antibiotic resistance investments"
+      - "Lyme disease or tick-borne illness interest"
+    negative:
+      - "Digital health only (no therapeutics)"
+      - "Late-stage only (Phase 2+)"
+      - "Device-focused, not drugs"
+      - "No life science track record"
+      
+# Email Personalization Guidelines
+email_guidelines:
+  tone: "Professional, warm, non-salesy"
+  length: "150-200 words ideal"
+  structure: "Hook → Context → Ask"
+  
+  hooks:
+    - "Recent portfolio company or investment"
+    - "Published thesis or article alignment"
+    - "Mutual connection (Stanford, Bay Area Lyme Foundation)"
+    - "Conference attendance or speaking engagement"
+    - "Similar company in portfolio (drug repurposing, infectious disease)"
+    
+  context_elements:
+    - "Brief company description (1-2 sentences)"
+    - "Scientific differentiation (persister bacteria, combination therapy)"
+    - "Market gap (zero approved treatments)"
+    - "Regulatory advantage (505(b)(2) pathway)"
+    
+  ask:
+    - "15-minute introductory call"
+    - "Coffee if Bay Area-based"
+    - "Brief conversation to explore fit"
+    - Never: "pitch deck attached" (too forward for cold outreach)
+    
+  prohibited_content:
+    - "No specific drug molecule names (azlocillin, azithromycin, disulfiram, baicalein)"
+    - "No Stanford attribution claims (only 'Stanford-affiliated founder')"
+    - "No TBI (traumatic brain injury) mentions"
+    - "No GJH INC references"
+    - "No CFO title for George (CEO only)"
+    - "No mass email language ('Dear Investor')"
+    - "No false urgency ('closing this week')"
+    - "No attachments in cold outreach"
+    
+  signature:
+    name: "George Vincent"
+    title: "CEO, ConViCure, Inc."
+    email: "george@convicure.com"
+    phone: "Optional (add only if warm intro)"
+    linkedin: "Optional (context-dependent)"
+    
+# Warm Introduction Paths
+warm_intro_networks:
+  stanford:
+    - "Stanford-affiliated VCs (check investor backgrounds)"
+    - "Stanford alumni networks"
+    - "Stanford bio-X or medical school connections"
+    
+  bay_area_lyme:
+    - "Linda Giampa (Bay Area Lyme Ventures)"
+    - "Emily Fairbairn (Bay Area Lyme Foundation)"
+    - "Prior grant recipients or research collaborators"
+    
+  legal:
+    - "SheppardMullin portfolio company investors"
+    - "Law firm client introductions"
+    
+  existing_network:
+    - "Jay Rajadas' research collaborators"
+    - "Cathy Shachaf's prior company connections"
+    - "George Vincent's GJH INC network (technology sector only)"
+    
+# Follow-up Cadence
+follow_up:
+  no_response:
+    day_5: "Gentle bump (brief, adds new context)"
+    day_12: "Final follow-up (gracious exit)"
+    
+  positive_response:
+    same_day: "Acknowledge, propose times for call"
+    post_meeting: "Thank you + deck/materials if requested"
+    
+  rejection:
+    same_day: "Gracious thank you, ask for referrals if appropriate"
+    
+# Compliance & Safety
+compliance:
+  can_spam:
+    - "Always include physical address"
+    - "Clear unsubscribe mechanism"
+    - "Accurate from/subject lines"
+    - "Honor opt-outs within 10 days"
+    
+  domain_health:
+    - "Monitor bounce rates (<5%)"
+    - "Track spam complaints (<0.1%)"
+    - "Warm up new domains gradually"
+    - "Maintain sender reputation score"
+    
+  ethical_standards:
+    - "No deceptive subject lines"
+    - "No misleading claims"
+    - "Respect investor time (concise emails)"
+    - "Full transparency on stage and milestones"

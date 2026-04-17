@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Sensitive Configuration
+.env
+config/config.yaml
+
+# Data (contains prospect information)
+data/
+*.json
+*.jsonl
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Email Credentials
+credentials.json
+token.json

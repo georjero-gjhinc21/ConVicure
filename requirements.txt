@@ -1,0 +1,33 @@
+# ConViCure Fundraising System Dependencies
+
+# Core
+anthropic>=0.39.0
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+
+# Email
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.122.0
+
+# Data handling
+pandas>=2.2.0
+jsonlines>=4.0.0
+
+# HTTP requests
+requests>=2.31.0
+httpx>=0.27.0
+
+# CLI interface
+rich>=13.7.0
+click>=8.1.7
+prompt-toolkit>=3.0.43
+
+# Utilities
+python-dateutil>=2.8.2
+pytz>=2024.1
+
+# Optional (for enhanced features)
+# crunchbase-api>=0.1.0  # Requires paid API key
+# linkedin-api>=2.0.0    # Requires Sales Navigator

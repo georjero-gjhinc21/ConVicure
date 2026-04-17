@@ -1,0 +1,138 @@
+# ConViCure Fundraising System Configuration
+# Copy this to config.yaml and fill in your credentials
+
+# Email Configuration
+email:
+  # Gmail account to send from
+  from_address: "george@convicure.com"
+  from_name: "George Vincent"
+  
+  # Gmail App Password (NOT your regular password)
+  # Generate at: https://myaccount.google.com/apppasswords
+  app_password: "${GMAIL_APP_PASSWORD}"
+  
+  # Safety limits
+  daily_limit: 10  # Maximum emails per day
+  hourly_limit: 3  # Maximum emails per hour
+  warmup_period_days: 14  # Gradual ramp-up period
+  
+  # Signature
+  signature: |
+    Best regards,
+    George Vincent
+    CEO, ConViCure, Inc.
+    george@convicure.com
+    
+# Anthropic API Configuration
+anthropic:
+  api_key: "${ANTHROPIC_API_KEY}"
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 4000
+  
+# Research Configuration
+research:
+  # Number of prospects to research per day
+  daily_target: 10
+  
+  # Minimum match score to qualify (0-100)
+  min_match_score: 70
+  
+  # Data sources (enable/disable)
+  sources:
+    web_search: true
+    crunchbase: false  # Requires API key (paid)
+    pitchbook: false   # Requires access (paid)
+    angellist: true
+    linkedin: false    # Requires Sales Navigator (paid)
+    
+# Personalization Settings
+personalization:
+  # Email length targets (words)
+  min_length: 120
+  max_length: 220
+  
+  # Required elements
+  require_hook: true  # Must identify connection point
+  require_research: true  # Must show investor-specific knowledge
+  
+  # Tone preferences
+  tone: "professional_warm"  # Options: professional_warm, formal, casual
+  
+# CRM & Pipeline
+crm:
+  # Pipeline stages
+  stages:
+    - "Identified"
+    - "Researched"
+    - "Drafted"
+    - "Sent"
+    - "Responded"
+    - "Meeting Scheduled"
+    - "Meeting Completed"
+    - "Passed"
+    - "Closed"
+    
+  # Auto-move rules
+  auto_advance: true
+  
+  # Follow-up timing (days)
+  follow_up:
+    first: 5
+    second: 12
+    
+# Review & Approval
+review:
+  # Review mode
+  interactive: true  # Set false for batch review
+  
+  # Auto-approve (USE WITH EXTREME CAUTION)
+  auto_approve_high_score: false  # Auto-approve 95+ scored drafts
+  high_score_threshold: 95
+  
+# Logging & Analytics
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "data/analytics/system.log"
+  
+analytics:
+  track_opens: false  # Requires email tracking pixels (optional)
+  track_clicks: false
+  
+# Safety & Compliance
+safety:
+  # Spam prevention
+  check_spam_score: true
+  max_spam_score: 5.0
+  
+  # Domain health monitoring
+  check_domain_health: true
+  min_domain_reputation: 80
+  
+  # Blacklist management
+  respect_unsubscribes: true
+  bounce_handling: true
+  
+  # Content filtering
+  prohibited_keywords:
+    - "Dear Investor"
+    - "Dear Sir/Madam"
+    - "urgent opportunity"
+    - "limited time"
+    - "act now"
+    - "guaranteed returns"
+    
+# Notifications
+notifications:
+  # Email George when events occur
+  email_on_response: false
+  email_on_error: true
+  email_daily_summary: true
+  
+# File Paths (usually don't need to change)
+paths:
+  prospects_db: "data/prospects/prospects.json"
+  pipeline_db: "data/prospects/pipeline.json"
+  drafts_dir: "data/drafts/"
+  sent_dir: "data/sent/"
+  analytics_dir: "data/analytics/"
+  knowledge_base: "config/convicure_knowledge.yaml"

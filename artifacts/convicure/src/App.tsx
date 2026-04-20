@@ -703,7 +703,7 @@ function Team() {
       photo: "/team/george-vincent.png",
       initials: "GV",
       name: "George Vincent",
-      title: "CEO",
+      title: "Chief Data and AI Officer",
       bio: "Brings operational leadership, financial management, and fundraising expertise to professionalize ConViCure's business infrastructure and lead the company's capital raise and investor readiness efforts.",
     },
     {

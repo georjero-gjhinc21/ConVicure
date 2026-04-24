@@ -700,13 +700,6 @@ function Team() {
       bio: "Dr. Jayakumar Rajadas, PhD, brings over 30 years of research leadership in drug delivery, biomaterials, and infectious disease therapeutics. He has authored 238+ peer-reviewed publications (14,600+ citations), developed 82+ patents, and co-founded five biotechnology companies. His research program screened over 7,450 compounds to identify novel therapeutic candidates for persistent tick-borne infections — work featured in major media outlets and adopted by clinicians worldwide.",
     },
     {
-      photo: "",
-      initials: "GV",
-      name: "George Vincent",
-      title: "Chief Data and AI Officer",
-      bio: "Brings operational leadership, financial management, and fundraising expertise to professionalize ConViCure's business infrastructure and lead the company's capital raise and investor readiness efforts.",
-    },
-    {
       photo: "/team/catherine-shachaf.jpg",
       photoPosition: "center center",
       initials: "CS",

@@ -700,7 +700,7 @@ function Team() {
       bio: "Dr. Jayakumar Rajadas, PhD, brings over 30 years of research leadership in drug delivery, biomaterials, and infectious disease therapeutics. He has authored 238+ peer-reviewed publications (14,600+ citations), developed 82+ patents, and co-founded five biotechnology companies. His research program screened over 7,450 compounds to identify novel therapeutic candidates for persistent tick-borne infections — work featured in major media outlets and adopted by clinicians worldwide.",
     },
     {
-      photo: "/team/george-vincent.png",
+      photo: "",
       initials: "GV",
       name: "George Vincent",
       title: "Chief Data and AI Officer",
@@ -739,18 +739,20 @@ function Team() {
           {members.map((m) => (
             <div className="team-card" key={m.name}>
               <div className="team-photo-wrap">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  className="team-photo"
-                  style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                    const fallback = e.currentTarget.nextElementSibling as HTMLElement | null;
-                    if (fallback) fallback.style.display = "flex";
-                  }}
-                />
-                <div className="team-avatar team-avatar-fallback" style={{ display: "none" }}>{m.initials}</div>
+                {m.photo ? (
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    className="team-photo"
+                    style={m.photoPosition ? { objectPosition: m.photoPosition } : undefined}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                      const fallback = e.currentTarget.nextElementSibling as HTMLElement | null;
+                      if (fallback) fallback.style.display = "flex";
+                    }}
+                  />
+                ) : null}
+                <div className="team-avatar team-avatar-fallback" style={{ display: m.photo ? "none" : "flex" }}>{m.initials}</div>
               </div>
               <div className="team-card-body">
                 <h3>{m.name}</h3>
